@@ -7,6 +7,10 @@ on:
     pull_request: 
         branches: 
             - main
+
+env:
+    MY_HOST: '127.0.0.1'
+
 jobs:
     build-job:
         runs-on: ubuntu-latest
@@ -24,3 +28,4 @@ jobs:
         needs: test-job
         steps:
             - run: echo "need deploy - job to production server  ${{ job.status }}"
+            - run: echo "need deploy - job to production server  ${{ env.MY_HOST }}"
