@@ -14,7 +14,10 @@ env:
 jobs:
     build-job:
         runs-on: ubuntu-latest
+        env:
+            FULLNAME: 'Supachai'
         steps:
+            - run: echo ${{ vars.COMPANY_NAME }}
             - run: echo "buildjob Re ${{ github.actor }}"
 
     test-job:
